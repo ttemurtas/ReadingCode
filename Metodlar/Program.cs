@@ -32,9 +32,33 @@ namespace Metodlar
             SepetManager sepetManager = new SepetManager();
             sepetManager.Ekle(product1);
             sepetManager.Ekle(product2);
+
+
+        }
+        static void Add()
+        {
+            Console.WriteLine("Added");
+        }
+        static int Add2(int number1, int number2 = 30) // Default parametreli method.
+        {
+            return number1 + number2;
+        }
+        static int Add3(ref int number1, int number2)
+        {
+            return number1 + number2;
+            //Ref keyword'ü değer tipli olan bir sayıyı referans tip gibi algılatır ve bu değer tipli değişken referans tipli davranarak değerini değiştirebilir.
+        }
+        static int Add4(params int[] numbers)
+        {
+            int result = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result += numbers[i];
+            }
+            return result;
         }
     }
 }
 
 
-//Do not yourself - DRY - Clean Code - Best Practice
+//Do not repeat yourself - DRY - Clean Code - Best Practice
